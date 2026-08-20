@@ -1,0 +1,36 @@
+.status {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--vdk-space-2);
+  font-family: var(--vdk-font-family);
+  font-size: var(--vdk-font-size-sm);
+  color: var(--vdk-color-muted-foreground);
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: var(--vdk-radius-full);
+  background-color: var(--vdk-color-muted-foreground);
+}
+
+.ready .dot {
+  background-color: var(--vdk-color-success);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--vdk-color-success) 22%, transparent);
+}
+
+.connecting .dot {
+  background-color: var(--vdk-color-warning);
+  animation: vdk-blink 1.1s ease-in-out infinite;
+}
+
+.label {
+  color: var(--vdk-color-foreground);
+  font-weight: var(--vdk-font-weight-medium);
+}
+
+@keyframes vdk-blink {
+  50% {
+    opacity: 0.3;
+  }
+}

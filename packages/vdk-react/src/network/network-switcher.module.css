@@ -1,0 +1,16 @@
+.switcher {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--vdk-space-2);
+  font-family: var(--vdk-font-family);
+}
+
+.custom {
+  display: flex;
+  align-items: flex-end;
+  gap: var(--vdk-space-2);
+}
+
+.customInput {
+  min-width: 220px;
+}
