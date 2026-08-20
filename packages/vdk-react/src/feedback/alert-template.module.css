@@ -1,0 +1,66 @@
+.alert {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--vdk-space-2);
+  min-width: 260px;
+  max-width: 360px;
+  padding: var(--vdk-space-3) var(--vdk-space-4);
+  border: 1px solid var(--vdk-color-border);
+  border-radius: var(--vdk-radius-md);
+  background-color: var(--vdk-color-card);
+  color: var(--vdk-color-card-foreground);
+  box-shadow: var(--vdk-shadow-md);
+  font-family: var(--vdk-font-family);
+  font-size: var(--vdk-font-size-md);
+}
+
+.dot {
+  flex-shrink: 0;
+  width: 8px;
+  height: 8px;
+  margin-top: 6px;
+  border-radius: var(--vdk-radius-full);
+  background-color: var(--vdk-color-muted-foreground);
+}
+
+.info .dot {
+  background-color: var(--vdk-color-primary);
+}
+
+.success .dot {
+  background-color: var(--vdk-color-success);
+}
+
+.error .dot {
+  background-color: var(--vdk-color-danger);
+}
+
+.loading .dot {
+  background-color: var(--vdk-color-warning);
+}
+
+.content {
+  flex-grow: 1;
+  word-break: break-word;
+}
+
+.title {
+  font-weight: var(--vdk-font-weight-bold);
+  margin-bottom: 2px;
+}
+
+.close {
+  flex-shrink: 0;
+  padding: 0;
+  border: none;
+  background: none;
+  color: var(--vdk-color-muted-foreground);
+  cursor: pointer;
+  font-size: var(--vdk-font-size-lg);
+  line-height: 1;
+  transition: color var(--vdk-transition);
+}
+
+.close:hover {
+  color: var(--vdk-color-foreground);
+}

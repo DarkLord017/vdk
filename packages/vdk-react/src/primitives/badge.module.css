@@ -1,0 +1,44 @@
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--vdk-space-1);
+  padding: 3px var(--vdk-space-2);
+  border: 1px solid transparent;
+  border-radius: var(--vdk-radius-full);
+  font-family: var(--vdk-font-family);
+  font-size: var(--vdk-font-size-xs);
+  font-weight: var(--vdk-font-weight-medium);
+  line-height: 1.4;
+  white-space: nowrap;
+}
+
+.neutral {
+  background-color: var(--vdk-color-muted);
+  color: var(--vdk-color-muted-foreground);
+}
+
+.primary {
+  background-color: color-mix(in srgb, var(--vdk-color-primary) 15%, transparent);
+  color: var(--vdk-color-primary);
+}
+
+.success {
+  background-color: color-mix(in srgb, var(--vdk-color-success) 15%, transparent);
+  color: var(--vdk-color-success);
+}
+
+.warning {
+  background-color: color-mix(in srgb, var(--vdk-color-warning) 18%, transparent);
+  color: var(--vdk-color-warning);
+}
+
+.danger {
+  background-color: color-mix(in srgb, var(--vdk-color-danger) 15%, transparent);
+  color: var(--vdk-color-danger);
+}
+
+.outline {
+  background-color: transparent;
+  border-color: var(--vdk-color-border);
+  color: var(--vdk-color-foreground);
+}

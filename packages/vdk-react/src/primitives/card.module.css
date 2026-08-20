@@ -1,0 +1,39 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--vdk-space-3);
+  padding: var(--vdk-space-5);
+  border: 1px solid var(--vdk-color-border);
+  border-radius: var(--vdk-radius-lg);
+  background-color: var(--vdk-color-card);
+  color: var(--vdk-color-card-foreground);
+  box-shadow: var(--vdk-shadow-sm);
+  font-family: var(--vdk-font-family);
+  font-size: var(--vdk-font-size-md);
+}
+
+.flat {
+  box-shadow: none;
+}
+
+.elevated {
+  box-shadow: var(--vdk-shadow-md);
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.title {
+  margin: 0;
+  font-size: var(--vdk-font-size-lg);
+  font-weight: var(--vdk-font-weight-bold);
+}
+
+.description {
+  margin: 0;
+  font-size: var(--vdk-font-size-sm);
+  color: var(--vdk-color-muted-foreground);
+}

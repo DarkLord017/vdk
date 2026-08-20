@@ -1,0 +1,64 @@
+{
+  "name": "@vara-dk/react",
+  "version": "0.1.0",
+  "description": "Themeable React components for Vara Network \u2014 wallet, transactions, network and primitives",
+  "license": "MIT",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./styles.css": "./dist/style.css",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist"
+  ],
+  "sideEffects": [
+    "**/*.css"
+  ],
+  "scripts": {
+    "build": "vite build && tsc -p tsconfig.build.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "@polkadot/ui-shared": "^3.16.7",
+    "@vara-dk/theme": "workspace:*"
+  },
+  "peerDependencies": {
+    "@gear-js/api": "^0.44.2 || ^0.45.0",
+    "@gear-js/react-hooks": "^0.19.0",
+    "@polkadot/api": "^16.4.6",
+    "@polkadot/util": "^13.0.0",
+    "@polkadot/util-crypto": "^13.0.0",
+    "@tanstack/react-query": "^5.56.2",
+    "react": "^18 || ^19",
+    "react-dom": "^18 || ^19",
+    "sails-js": "^0.5.0"
+  },
+  "devDependencies": {
+    "@gear-js/api": "^0.44.2",
+    "@gear-js/react-hooks": "^0.19.1",
+    "@polkadot/api": "^16.4.6",
+    "@polkadot/api-derive": "^16.4.6",
+    "@polkadot/util": "^13.5.7",
+    "@polkadot/util-crypto": "^13.5.7",
+    "@tanstack/react-query": "^5.66.0",
+    "@testing-library/jest-dom": "^6.6.3",
+    "@testing-library/react": "^16.2.0",
+    "@types/react": "^19.0.8",
+    "@types/react-dom": "^19.0.3",
+    "@vitejs/plugin-react": "^4.3.4",
+    "jsdom": "^26.0.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "sails-js": "^0.5.0",
+    "typescript": "^5.7.3",
+    "vite": "^6.1.0",
+    "vitest": "^3.0.5"
+  }
+}

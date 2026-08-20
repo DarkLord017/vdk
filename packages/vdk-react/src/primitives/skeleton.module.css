@@ -1,0 +1,16 @@
+@keyframes vdk-pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.45;
+  }
+}
+
+.skeleton {
+  display: block;
+  border-radius: var(--vdk-radius-sm);
+  background-color: var(--vdk-color-muted);
+  animation: vdk-pulse 1.4s ease-in-out infinite;
+}

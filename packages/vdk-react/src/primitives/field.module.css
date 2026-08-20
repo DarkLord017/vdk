@@ -1,0 +1,79 @@
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--vdk-space-1);
+  font-family: var(--vdk-font-family);
+}
+
+.label {
+  font-size: var(--vdk-font-size-sm);
+  font-weight: var(--vdk-font-weight-medium);
+  color: var(--vdk-color-foreground);
+}
+
+.control {
+  width: 100%;
+  height: var(--vdk-control-height-md);
+  padding: 0 var(--vdk-space-3);
+  border: 1px solid var(--vdk-color-border);
+  border-radius: var(--vdk-radius-md);
+  background-color: var(--vdk-color-input);
+  color: var(--vdk-color-foreground);
+  font-family: inherit;
+  font-size: var(--vdk-font-size-md);
+  transition:
+    border-color var(--vdk-transition),
+    box-shadow var(--vdk-transition);
+}
+
+.control::placeholder {
+  color: var(--vdk-color-muted-foreground);
+}
+
+.control:focus {
+  outline: none;
+  border-color: var(--vdk-color-ring);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--vdk-color-ring) 25%, transparent);
+}
+
+.control:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.sm {
+  height: var(--vdk-control-height-sm);
+  font-size: var(--vdk-font-size-sm);
+}
+
+.lg {
+  height: var(--vdk-control-height-lg);
+  font-size: var(--vdk-font-size-lg);
+}
+
+.invalid {
+  border-color: var(--vdk-color-danger);
+}
+
+.select {
+  appearance: none;
+  padding-right: var(--vdk-space-8);
+  background-image: linear-gradient(45deg, transparent 50%, currentColor 50%),
+    linear-gradient(135deg, currentColor 50%, transparent 50%);
+  background-position:
+    calc(100% - 18px) calc(50% + 2px),
+    calc(100% - 13px) calc(50% + 2px);
+  background-size: 5px 5px;
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+
+.error {
+  font-size: var(--vdk-font-size-xs);
+  color: var(--vdk-color-danger);
+}
+
+.hint {
+  font-size: var(--vdk-font-size-xs);
+  color: var(--vdk-color-muted-foreground);
+}
