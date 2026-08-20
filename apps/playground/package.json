@@ -1,0 +1,36 @@
+{
+  "name": "@vara-dk/playground",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "@gear-js/api": "^0.44.2",
+    "@gear-js/react-hooks": "^0.19.1",
+    "@polkadot/api": "^16.4.6",
+    "@polkadot/api-derive": "^16.4.6",
+    "@tanstack/react-query": "^5.66.0",
+    "@vara-dk/react": "workspace:*",
+    "@vara-dk/theme": "workspace:*",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "sails-js": "^0.5.0"
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "^6.10.0",
+    "@testing-library/react": "^16.3.2",
+    "@types/react": "^19.0.8",
+    "@types/react-dom": "^19.0.3",
+    "@vitejs/plugin-react": "^4.3.4",
+    "jsdom": "^26.1.0",
+    "typescript": "^5.7.3",
+    "vite": "^6.1.0",
+    "vitest": "^3.2.7"
+  }
+}
