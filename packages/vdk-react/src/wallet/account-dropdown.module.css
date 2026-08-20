@@ -1,0 +1,109 @@
+.wrapper {
+  position: relative;
+  display: inline-block;
+  font-family: var(--vdk-font-family);
+}
+
+.trigger {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--vdk-space-2);
+  height: var(--vdk-control-height-md);
+  padding: 0 var(--vdk-space-3);
+  border: 1px solid var(--vdk-color-border);
+  border-radius: var(--vdk-radius-md);
+  background-color: var(--vdk-color-card);
+  color: var(--vdk-color-card-foreground);
+  font-family: inherit;
+  font-size: var(--vdk-font-size-md);
+  font-weight: var(--vdk-font-weight-medium);
+  cursor: pointer;
+  transition:
+    background-color var(--vdk-transition),
+    border-color var(--vdk-transition);
+}
+
+.trigger:hover {
+  border-color: var(--vdk-color-primary);
+}
+
+.trigger:focus-visible {
+  outline: 2px solid var(--vdk-color-ring);
+  outline-offset: 2px;
+}
+
+.sm {
+  height: var(--vdk-control-height-sm);
+  font-size: var(--vdk-font-size-sm);
+}
+
+.lg {
+  height: var(--vdk-control-height-lg);
+  font-size: var(--vdk-font-size-lg);
+}
+
+.divider {
+  width: 1px;
+  height: 60%;
+  background-color: var(--vdk-color-border);
+}
+
+.panel {
+  position: absolute;
+  top: calc(100% + var(--vdk-space-2));
+  right: 0;
+  z-index: 900;
+  display: flex;
+  flex-direction: column;
+  gap: var(--vdk-space-3);
+  min-width: 268px;
+  padding: var(--vdk-space-4);
+  border: 1px solid var(--vdk-color-border);
+  border-radius: var(--vdk-radius-lg);
+  background-color: var(--vdk-color-card);
+  color: var(--vdk-color-card-foreground);
+  box-shadow: var(--vdk-shadow-md);
+}
+
+.identity {
+  display: flex;
+  align-items: center;
+  gap: var(--vdk-space-3);
+}
+
+.identityText {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.name {
+  font-weight: var(--vdk-font-weight-bold);
+}
+
+.address {
+  font-family: var(--vdk-font-family-mono);
+  font-size: var(--vdk-font-size-xs);
+  color: var(--vdk-color-muted-foreground);
+}
+
+.balanceRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--vdk-space-3);
+  border-radius: var(--vdk-radius-md);
+  background-color: var(--vdk-color-muted);
+}
+
+.balanceLabel {
+  font-size: var(--vdk-font-size-xs);
+  color: var(--vdk-color-muted-foreground);
+}
+
+.actions {
+  display: flex;
+  flex-direction: column;
+  gap: var(--vdk-space-2);
+}

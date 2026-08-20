@@ -1,0 +1,10 @@
+.ring {
+  border-radius: var(--vdk-radius-full);
+  box-shadow: 0 0 0 2px var(--vdk-color-background), 0 0 0 3px var(--vdk-color-primary);
+}
+
+.fallback {
+  display: inline-block;
+  border-radius: var(--vdk-radius-full);
+  background-color: var(--vdk-color-muted);
+}

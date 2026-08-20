@@ -1,0 +1,15 @@
+.balance {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 4px;
+  font-family: var(--vdk-font-family);
+  font-size: var(--vdk-font-size-md);
+  font-weight: var(--vdk-font-weight-medium);
+  color: var(--vdk-color-foreground);
+}
+
+.unit {
+  font-size: var(--vdk-font-size-xs);
+  font-weight: var(--vdk-font-weight-normal);
+  color: var(--vdk-color-muted-foreground);
+}
