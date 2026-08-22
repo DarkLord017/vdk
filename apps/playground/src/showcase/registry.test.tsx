@@ -30,6 +30,7 @@ vi.mock("@gear-js/react-hooks", () => ({
   }),
   // No program loaded: the transaction demo falls back to its disabled placeholder.
   useSails: () => ({ data: undefined, isLoading: false, error: null }),
+  useProgramQuery: () => ({ data: undefined, error: null, isFetching: false, refetch: vi.fn() }),
   usePrepareProgramTransaction: () => ({ prepareTransactionAsync: vi.fn() }),
   useSendProgramTransaction: () => ({ sendTransactionAsync: vi.fn() }),
   getVaraAddress: (address: string) => address,

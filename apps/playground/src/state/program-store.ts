@@ -7,6 +7,10 @@ export type ProgramConfig = {
   functionName: string;
   /** Raw text per argument, parsed as JSON when it parses. */
   args: Record<string, string>;
+  /** The read side — selected independently of the transaction function. */
+  queryServiceName: string;
+  queryFunctionName: string;
+  queryArgs: Record<string, string>;
 };
 
 const STORAGE_KEY = "vdk-playground-program";
@@ -17,6 +21,9 @@ const EMPTY: ProgramConfig = {
   serviceName: "",
   functionName: "",
   args: {},
+  queryServiceName: "",
+  queryFunctionName: "",
+  queryArgs: {},
 };
 
 /**

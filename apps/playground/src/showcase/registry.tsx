@@ -22,7 +22,7 @@ import { useState } from "react";
 
 import { getProgramConfig } from "../state/program-store.js";
 import { jsx } from "./code.js";
-import { ProgramDemo, programUsageCode } from "./program-demo.js";
+import { ProgramDemo, QueryDemo, programUsageCode, queryUsageCode } from "./program-demo.js";
 import type { Showcase, ShowcaseProps } from "./types.js";
 
 const DEMO_ADDRESS = "kGkLEU3e3XXkJp2WK4eNpVmSab5xUNL9QtmLPh8QfCL2EgotW";
@@ -225,6 +225,18 @@ export const showcases: Showcase[] = [
         variant: str(props, "variant", "primary") as "primary",
         confirm: bool(props, "confirm"),
       }),
+  },
+  {
+    id: "program-query",
+    group: "Transactions",
+    name: "ProgramQuery",
+    description:
+      "Reads state from a program and renders the decoded result. The read half of a dApp, sharing the same runtime-loaded client as TransactionButton.",
+    note:
+      "Uses whatever program is loaded above — paste an ID and IDL once and both demos use it. Turn on watch to re-read whenever the program's state changes on chain.",
+    controls: [{ type: "boolean", id: "watch", label: "Watch for changes", defaultValue: false }],
+    Demo: ({ props }) => <QueryDemo watch={bool(props, "watch")} />,
+    code: (props) => queryUsageCode(getProgramConfig(), bool(props, "watch")),
   },
   {
     id: "confirm-dialog",

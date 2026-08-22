@@ -1,0 +1,96 @@
+.query {
+  display: flex;
+  flex-direction: column;
+  gap: var(--vdk-space-2);
+  min-width: 220px;
+  padding: var(--vdk-space-4);
+  border: 1px solid var(--vdk-color-border);
+  border-radius: var(--vdk-radius-md);
+  background-color: var(--vdk-color-card);
+  color: var(--vdk-color-card-foreground);
+  font-family: var(--vdk-font-family);
+  font-size: var(--vdk-font-size-md);
+}
+
+.head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--vdk-space-3);
+}
+
+.label {
+  font-size: var(--vdk-font-size-xs);
+  font-weight: var(--vdk-font-weight-medium);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--vdk-color-muted-foreground);
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: var(--vdk-space-2);
+}
+
+.live {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: var(--vdk-font-size-xs);
+  color: var(--vdk-color-muted-foreground);
+}
+
+.dot {
+  width: 6px;
+  height: 6px;
+  border-radius: var(--vdk-radius-full);
+  background-color: var(--vdk-color-success);
+}
+
+.refresh {
+  padding: 2px 6px;
+  border: none;
+  border-radius: var(--vdk-radius-sm);
+  background: none;
+  color: var(--vdk-color-muted-foreground);
+  font-family: inherit;
+  font-size: var(--vdk-font-size-xs);
+  cursor: pointer;
+  transition:
+    background-color var(--vdk-transition),
+    color var(--vdk-transition);
+}
+
+.refresh:hover:not(:disabled) {
+  background-color: var(--vdk-color-accent);
+  color: var(--vdk-color-foreground);
+}
+
+.refresh:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.value {
+  margin: 0;
+  overflow-x: auto;
+  font-family: var(--vdk-font-family-mono);
+  font-size: var(--vdk-font-size-md);
+  line-height: 1.5;
+  white-space: pre-wrap;
+  word-break: break-word;
+  color: var(--vdk-color-foreground);
+}
+
+.error {
+  margin: 0;
+  font-size: var(--vdk-font-size-sm);
+  color: var(--vdk-color-danger);
+}
+
+.idle {
+  margin: 0;
+  font-size: var(--vdk-font-size-sm);
+  color: var(--vdk-color-muted-foreground);
+}
