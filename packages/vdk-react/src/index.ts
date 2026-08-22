@@ -61,6 +61,10 @@ export type {
   SailsArgInfo,
 } from "./transaction/use-sails-program.js";
 
+// Program state
+export { ProgramQuery, formatValue } from "./program/program-query.js";
+export type { ProgramQueryProps } from "./program/program-query.js";
+
 // Feedback
 export { AlertTemplate } from "./feedback/alert-template.js";
 

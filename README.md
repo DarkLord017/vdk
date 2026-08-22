@@ -47,9 +47,28 @@ token-driven design layer plus the playground on top.
 Supports Polkadot{.js}, SubWallet, Talisman, Enkrypt, Nova and Varan; uninstalled extensions
 stay listed with an install link instead of silently disappearing.
 
-**Transactions** — `TransactionButton`, `ConfirmDialog`, `useTxToast`
+**Programs** — `TransactionButton`, `ProgramQuery`, `ConfirmDialog`, `useTxToast`, `useSailsProgram`
 `TransactionButton` prepares a sails message (which yields the fee estimate), optionally shows
-it for confirmation, signs, sends, and reports the outcome as a single toast.
+it for confirmation, signs, sends, and reports the outcome as a single toast. `ProgramQuery` is
+the read half: it runs a sails query and renders the decoded value, optionally re-reading
+whenever the program's state changes on chain.
+
+`useSailsProgram` builds a working sails client at runtime from a program ID and an IDL string
+— no codegen step, no generated class in your repo. That is what lets a UI accept a contract
+address from the user and immediately read from and write to it:
+
+```tsx
+const { program, services } = useSailsProgram({ programId, idl });
+
+<ProgramQuery program={program} serviceName="Vft" functionName="BalanceOf" args={[address]} watch />
+<TransactionButton program={program} serviceName="Vft" functionName="Mint" args={[to, amount]} confirm>
+  Mint
+</TransactionButton>
+```
+
+Sails needs the IDL as well as the address — a program's services, functions and argument types
+are not recoverable from an on-chain address alone. `services` gives you the parsed list, which
+is how the playground builds its service/function/argument controls.
 
 **Network** — `NetworkSwitcher`, `NodeStatus`
 

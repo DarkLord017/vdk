@@ -3,16 +3,21 @@ import { describe, expect, it, vi } from "vitest";
 
 import { useSailsProgram } from "./use-sails-program.js";
 
+// Stand-ins for the scale-codec classes sails attaches to each argument. Declared once and
+// shared: two same-named classes in one scope get renamed by the compiler (ActorId2).
+class ActorId {}
+class U256 {}
+
 const mintFn = Object.assign(vi.fn(), {
   args: [
-    { name: "to", type: class ActorId {} },
-    { name: "value", type: class U256 {} },
+    { name: "to", type: ActorId },
+    { name: "value", type: U256 },
   ],
   docs: "Mint tokens to an account",
 });
 
 const balanceQuery = Object.assign(vi.fn(), {
-  args: [{ name: "account", type: class ActorId {} }],
+  args: [{ name: "account", type: ActorId }],
 });
 
 const fakeSails = {
