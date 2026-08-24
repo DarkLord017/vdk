@@ -1,4 +1,12 @@
+import { useState } from "react";
+
 import type { Showcase, ShowcaseProps } from "../showcase/types.js";
+
+const WIDTHS = [
+  { id: "fill", label: "Fill", width: "100%" },
+  { id: "tablet", label: "768", width: "768px" },
+  { id: "phone", label: "390", width: "390px" },
+] as const;
 
 type Props = {
   showcase: Showcase;
@@ -8,6 +16,9 @@ type Props = {
 
 export function PreviewCanvas({ showcase, props, onProp }: Props) {
   const { Demo } = showcase;
+  const [widthId, setWidthId] = useState<(typeof WIDTHS)[number]["id"]>("fill");
+
+  const width = WIDTHS.find((item) => item.id === widthId) ?? WIDTHS[0];
 
   return (
     <div className="pg-preview">
@@ -16,9 +27,24 @@ export function PreviewCanvas({ showcase, props, onProp }: Props) {
           <h2>{showcase.name}</h2>
           <p>{showcase.description}</p>
         </div>
+
+        <div className="pg-segmented pg-widths" role="group" aria-label="Preview width">
+          {WIDTHS.map((item) => (
+            <button
+              key={item.id}
+              type="button"
+              className={item.id === widthId ? "is-active" : undefined}
+              onClick={() => setWidthId(item.id)}
+            >
+              {item.label}
+            </button>
+          ))}
+        </div>
       </header>
 
-      <div className="pg-stage">
+      {/* The stage carries the theme's own background, so components sit on their real
+          surface rather than on the playground's chrome. */}
+      <div className="pg-stage" style={{ maxWidth: width.width }}>
         <Demo props={props} />
       </div>
 
