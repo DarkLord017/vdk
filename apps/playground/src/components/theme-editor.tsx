@@ -73,27 +73,39 @@ export function ThemeEditor({
       </div>
 
       {COLOR_GROUPS.map((group) => (
-        <section className="pg-group" key={group.title}>
-          <h3>{group.title}</h3>
+        <details className="pg-group" key={group.title} open>
+          <summary>
+            <h3>{group.title}</h3>
+
+            <span className="pg-group-preview" aria-hidden="true">
+              {group.tokens.slice(0, 4).map((token) => (
+                <i key={token} style={{ background: theme.colors[token] }} />
+              ))}
+            </span>
+          </summary>
 
           <div className="pg-swatches">
             {group.tokens.map((token) => (
-              <label className="pg-swatch" key={token}>
+              <label className="pg-swatch" key={token} title={theme.colors[token]}>
                 <input
                   type="color"
                   value={toHex(theme.colors[token])}
                   onChange={(event) => onToken({ colors: { [token]: event.target.value } })}
                 />
-                <span className="pg-swatch-name">{token}</span>
-                <span className="pg-swatch-value">{theme.colors[token]}</span>
+                <span className="pg-swatch-text">
+                  <span className="pg-swatch-name">{token}</span>
+                  <span className="pg-swatch-value">{theme.colors[token]}</span>
+                </span>
               </label>
             ))}
           </div>
-        </section>
+        </details>
       ))}
 
-      <section className="pg-group">
-        <h3>Shape &amp; scale</h3>
+      <details className="pg-group" open>
+        <summary>
+          <h3>Shape &amp; scale</h3>
+        </summary>
 
         <Slider
           label="Radius"
@@ -156,10 +168,12 @@ export function ThemeEditor({
             })
           }
         />
-      </section>
+      </details>
 
-      <section className="pg-group">
-        <h3>Typography</h3>
+      <details className="pg-group" open>
+        <summary>
+          <h3>Typography</h3>
+        </summary>
 
         <label className="pg-field">
           <span>Font family</span>
@@ -177,7 +191,7 @@ export function ThemeEditor({
             )}
           </select>
         </label>
-      </section>
+      </details>
     </aside>
   );
 }

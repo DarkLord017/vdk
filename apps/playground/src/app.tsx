@@ -1,5 +1,5 @@
 import { VdkProvider } from "@vara-dk/react";
-import { serializeTheme } from "@vara-dk/theme";
+import { presets, serializeTheme } from "@vara-dk/theme";
 import "@vara-dk/react/styles.css";
 import { useMemo, useState } from "react";
 
@@ -116,27 +116,32 @@ export function App() {
 
       <div className="pg-body">
         <nav className="pg-nav">
-          {groups.map((group) => (
+          {groups.map((group) => {
+            const items = showcases.filter((item) => item.group === group);
+
+            return (
             <section key={group}>
-              <h3>{group}</h3>
+              <h3>
+                {group}
+                <span className="pg-nav-count">{items.length}</span>
+              </h3>
 
               <ul>
-                {showcases
-                  .filter((item) => item.group === group)
-                  .map((item) => (
-                    <li key={item.id}>
-                      <button
-                        type="button"
-                        className={item.id === showcase.id ? "is-active" : undefined}
-                        onClick={() => setActiveId(item.id)}
-                      >
-                        {item.name}
-                      </button>
-                    </li>
-                  ))}
+                {items.map((item) => (
+                  <li key={item.id}>
+                    <button
+                      type="button"
+                      className={item.id === showcase.id ? "is-active" : undefined}
+                      onClick={() => setActiveId(item.id)}
+                    >
+                      {item.name}
+                    </button>
+                  </li>
+                ))}
               </ul>
             </section>
-          ))}
+            );
+          })}
         </nav>
 
         <main className="pg-main">
@@ -173,6 +178,20 @@ export function App() {
           onReset={reset}
         />
       </div>
+
+      <footer className="pg-footer">
+        <span>
+          VDK — themeable React components for Vara. Built on{" "}
+          <a href="https://www.npmjs.com/package/@gear-js/react-hooks" target="_blank" rel="noreferrer">
+            @gear-js/react-hooks
+          </a>
+          .
+        </span>
+
+        <span>
+          {showcases.length} components · {presets.length} presets
+        </span>
+      </footer>
     </div>
   );
 }
